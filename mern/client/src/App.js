@@ -16,65 +16,71 @@ import React, { useState } from 'react';
 import SignupUser from "./components/SignupUser";
 import SignupEmployer from "./components/SignupEmployer"
 function App() {
-
-
+  
   return (
+    
     <BrowserRouter>
-    <div className="App">
-      <Navbar bg="dark" expand="lg" variant="dark">
-        <Container fluid>
-          <Navbar.Brand href="#">Monisha Nagpal</Navbar.Brand>
-          <Navbar.Toggle aria-controls="navbarScroll" />
-          <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav
-              className="justify-content-center flex-grow-1 pe-3"
-              style={{ maxHeight: "250px" }}
-              
-            >
-              <Nav.Link as={Link} to="/">
-                HOME
-              </Nav.Link>
-              <Nav.Link as={Link} to="/about">
-                ABOUT
-              </Nav.Link>
-              <Nav.Link as={Link} to="/faq">
-                FAQ
-              </Nav.Link>
-              <Nav.Link as={Link} to="/contact">
-                CONTACT US
-              </Nav.Link>
-              <Nav.Link as={Link} to="/profile">
-                PROFILES
-              </Nav.Link>
-            </Nav>
-            <Form className="d-flex text center">
-              <Link to="/loginuser">
-              <Button variant="outline-success" >LOGIN</Button>
-              </Link>
-            </Form>
+      <div className="App">
+        <Navbar bg="dark" expand="lg" variant="dark">
+          <Container fluid>
+            <Navbar.Brand href="#" className="brand-name">Galcareer</Navbar.Brand>
+            <Navbar.Toggle aria-controls="navbarScroll" />
+            <Navbar.Collapse id="responsive-navbar-nav">
+              <Nav
+                className="justify-content-center flex-grow-1 pe-3 text-center"
+                id="nav-elements"
+                style={{ maxHeight: "250px" }}
 
-            <Form className="d-flex" eventKey={2}>
-              <Link to="/signupuser">
-              <Button variant="outline-success">SIGN UP</Button>
-              </Link>
-            </Form>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <div>
-      <Routes>
-      <Route path="/loginuser" element={<LoginUser/>}/>
-      <Route path="/signupuser" element={<SignupUser/>}/>
-      <Route path="/about" element={<About/>}/>
-      <Route path="/faq" element={<Faq/>}/>
-      <Route path="/contact" element={<Contact/>}/>
-      <Route path="/profile" element={<Profiles/>}/>
-      <Route path="/loginemployer" element={<LoginEmployer/>}/>
-      <Route path="/signupemployer" element={<SignupEmployer/>}/>
-<Route path="/" element={<Home/>}/>
-      </Routes>
+              >
+                <Nav.Link as={Link} to="/" className="Link1">
+                  HOME
+                </Nav.Link>
+                <Nav.Link as={Link} to="/about" className="Link2">
+                  ABOUT
+                </Nav.Link>
+                <Nav.Link as={Link} to="/faq" className="Link3">
+                  FAQ
+                </Nav.Link>
+                <Nav.Link as={Link} to="/contact" className="Link4">
+                  CONTACT US
+                </Nav.Link>
+                <Nav.Link as={Link} to="/profile" className="Link5">
+                  PROFILES
+                </Nav.Link>
+              </Nav>
+              <Form className="d-flex text-center button1">
+
+                <Link to="/loginuser">
+                  <div className="center-button text-center justify-content-center">
+                    <Button variant="outline-success" className="button1" >LOGIN</Button>
+                  </div></Link>
+
+              </Form>
+
+              <Form className="d-flex" eventKey={2}>
+                <Link to="/signupuser">
+                  <Button variant="outline-success">SIGN UP</Button>
+                </Link>
+              </Form>
+            </Navbar.Collapse>
+          </Container>
+        </Navbar>
+  
+        <div>
+          <Routes>
+            <Route path="/loginuser" element={<LoginUser />} />
+            <Route path="/signupuser" element={<SignupUser />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/profile" element={<Profiles />} />
+            <Route path="/loginemployer" element={<LoginEmployer />} />
+            <Route path="/signupemployer" element={<SignupEmployer />} />
+            <Route path="/" element={<Home />} />
+          </Routes>
+        </div>
       </div>
-    </div>
+      
     </BrowserRouter>
   );
 }
