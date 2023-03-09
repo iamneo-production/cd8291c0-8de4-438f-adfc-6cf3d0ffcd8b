@@ -1,9 +1,9 @@
 import React from 'react'
 
-export default function Services() {
+export default function Profiles() {
   return (
     <div>
-      <h1>SERVICES</h1>
+      <h1>PROFILES</h1>
     </div>
   )
 }
