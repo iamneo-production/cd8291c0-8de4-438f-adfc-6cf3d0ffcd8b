@@ -7,13 +7,20 @@ import Profiles from "./components/Profiles";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import github from "./github-logo.png";
+import fb from "./facebook.png";
+import twitter from "./twitter-sign.png";
+import linkedin from "./linkedin.png";
+import instagram from "./instagram.png";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import LoginUser from "./components/LoginUser"
 import Home from "./components/Home";
 import LoginEmployer from "./components/LoginEmployer";
-import React, { useState } from 'react';
+import React from 'react';
 import SignupUser from "./components/SignupUser";
+import Row from "react-bootstrap/Row"
+import Col from "react-bootstrap/Col"
 import SignupEmployer from "./components/SignupEmployer"
 function App() {
   
@@ -80,7 +87,74 @@ function App() {
           </Routes>
         </div>
       </div>
-      
+      <div className="footer" id="lol">
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+            
+            <br></br>
+            <br></br>
+            <br></br>
+            <br></br>
+           
+            <br></br>
+            <Container fluid="md" className="footer">
+              <Row className="space">
+                <Col className="text-center" id="socio-img">
+                  <a
+                    href="https://github.com/moonNdStar/"
+                    target={"_blank"}
+                    className="icon1"
+                  >
+                    {" "}
+                    <img src={github} height="30px"></img>
+                  </a>
+                  <a
+                    href="https://www.facebook.com/monisha.nagpal.3"
+                    target={"_blank"}
+                    className="icon2"
+                  >
+                    <img src={fb} height="30px"></img>
+                  </a>
+                  <a
+                    href="https://www.instagram.com/mooonishaa/?hl=en"
+                    target={"_blank"}
+                    className="icon3"
+                  >
+                    <img src={instagram} height="30px"></img>
+                  </a>
+                  <a
+                    href="https://www.linkedin.com/in/monisha-nagpal-832b351b4/"
+                    target={"_blank"}
+                    className="icon4"
+                  >
+                    <img src={linkedin} height="30px"></img>
+                  </a>
+                  <a
+                    href="https://twitter.com/monisha_nagpal"
+                    target={"_blank"}
+                    className="icon5"
+                  >
+                    <img src={twitter} height="30px"></img>
+                  </a>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="text-center">
+                  <p className="copyright">Copyright &#169; 2023 by Rosalind-Franklin</p>
+                </Col>
+              </Row>
+              <Row>
+                <Col className="text-center">
+                  <p className="love">Made With &#10084;&#65039;</p>
+                </Col>
+              </Row>
+        
+        </Container>
+        </div>
     </BrowserRouter>
   );
 }

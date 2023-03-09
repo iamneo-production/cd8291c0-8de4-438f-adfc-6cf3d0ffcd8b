@@ -3,7 +3,6 @@ import imageOfGirl from "./2021flat_231.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { Button } from "react-bootstrap";
 import Typewriter from "typewriter-effect";
 import ScrollTrigger from 'react-scroll-trigger'
 import CountUp from 'react-countup'
