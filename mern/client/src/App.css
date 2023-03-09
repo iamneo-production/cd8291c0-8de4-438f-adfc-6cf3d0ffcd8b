@@ -1,0 +1,196 @@
+.main{
+  background-color: rgb(27, 100, 53);
+
+}
+.dream{
+  font-size: 45px;
+}
+.word{
+  font-style: 'Lato', sans-serif;
+  background: -webkit-linear-gradient(#ffffff, #a94949);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.Link1,.Link2,.Link3,.Link4,.Link5{
+  font-family: 'Lato', sans-serif !important;
+  color: white !important;
+  font-size: 15px !important;
+  padding-left: 10px;
+}
+
+.brand-name{
+  font-family: 'Yellowtail', cursive;
+  font-size: 35px !important;
+}
+
+.home {
+  background-color: rgb(71, 20, 56) !important;
+  z-index: 2 !important;
+ 
+}
+
+.small-statement{
+  font-size: 14px;
+}
+
+.search-container{
+  font-size: 25px;
+  border-radius: 20px;
+}
+
+
+
+.serach-inner{
+  border-radius: 30px;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap");
+.search-local {
+	width: 70%;
+	max-width: 30rem;
+	display: flex;
+	align-items: center;
+	column-gap: 2rem;
+	padding-left: 1rem;
+	background: var(--white);
+	border-radius: 1rem;
+	min-height: 4rem;
+	height: auto;
+	border: 0.1rem solid var(--black);
+	border-right: none;
+}
+
+/* ICON */
+.icon {
+	color: var(--red);
+	font-size: 2.5rem;
+	display: flex;
+	align-items: center;
+	cursor: pointer;
+}
+
+.icon:hover {
+	animation: funny-icon 0.4s ease-in-out;
+}
+
+@keyframes funny-icon {
+	0% {
+		scale: 1;
+	}
+
+	50% {
+		scale: 0.8;
+		transform-origin: bottom;
+		transform: rotate(-15deg);
+	}
+
+	100% {
+		scale: 1;
+	}
+}
+
+/* INPUT */
+.search-local input {
+	height: 70%;
+	width: 100%;
+	flex: 1 1 25rem;
+	background: var(--white);
+	display: flex;
+	outline: none;
+	border: none;
+	color: var(--black);
+	font-size: 1rem;
+}
+
+input[type="text"]::placeholder {
+	color: var(--black);
+	font-size: 20px !important;
+}
+
+/* BUTTON */
+.search-local button {
+	background: var(--red);
+	border: none;
+	border-radius: 1rem;
+	font-weight: 100;
+	font-size: 1rem;
+	height: 3rem;
+	width: 10rem;
+	cursor: pointer;
+	transition: all 0.3s;
+	text-align: center;
+}
+
+button a {
+	color: var(--white);
+}
+
+.search-local button .search-icon {
+	display: none;
+}
+
+.search-local button:hover {
+	letter-spacing: 0.5rem;
+}
+
+/* MEDIAS */
+@media (max-width: 575px) {
+	.search-local {
+		padding-left: 0;
+		column-gap: 0.25rem;
+	}
+
+	.search-local button {
+		width: 10rem;
+	}
+
+	button a {
+		display: none;
+	}
+
+	.search-local button .search-icon {
+		display: block;
+		margin-inline: auto;
+		color: var(--white);
+		font-size: 3rem;
+	}
+
+	input[type="text"]::placeholder {
+		font-size: 1.7rem;
+	}
+}
+
+:root {
+	--font: "Inter", sans-serif;
+	--red: #da2535;
+	--black: #292929;
+	--white: #fbfbfb;
+}
+
+.popular{
+  font-size: 12px;
+}
+
+.job-submitted{
+  font-size: 12px;
+}
+
+#girl-image{
+  
+  -webkit-animation: mover 2s infinite  alternate;
+  animation: mover 2s infinite  alternate;
+}
+
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+@keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-20px); }
+}
+
+.home{
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 90%, 0 100%);
+}
