@@ -5,29 +5,24 @@ const { isEmail } = require('validator');
 const UserSchema = new Schema({
     firstname: {
         type: String,
-        required: true
+        //required: true
     },
     lastname: {
         type: String,
-        required: true
-    },
-    username: {
-        type: String,
-        unique: true,
-        required: true
+        //required: true
     },
     email: {
         type: String,
-        required: [true,'Please enter an email'],
+        //required: [true,'Please enter an email'],
         unique: true,
         lowercase: true,
-        validate: [isEmail, 'Please enter a valid email']
+        //validate: [isEmail, 'Please enter a valid email']
     },
     password: {
         type: String,
-        required: [true, 'Please enter a valid password'],
+        //required: [true, 'Please enter a valid password'],
         minlength: [6, 'Minimum password length must be 6 characters']
     }
 })
 
-module.exports = User = mongoose.model('users',UserSchema);
+module.exports = User = mongoose.model('user',UserSchema);
