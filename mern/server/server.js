@@ -4,10 +4,12 @@ const mongoose=require("mongoose")
 const connectDB = require("./config/db"); //added
 const users = require("./routes/Users"); // added
 const emps = require("./routes/Emps");
-//const todo = require("./routes/todo");
+const searchRoute = require('./routes/Search');
+const jobs = require("./controllers/jobs");
 const path=require("path");
 const cors = require('cors');
 const bodyParser = require('body-parser');
+
 
 const { debugPort } = require("process");
 const app = express();
@@ -29,6 +31,8 @@ app.use(bodyParser.json());
 
 app.use("/api/user", users);
 app.use("/api/employee", emps);
+app.use("/api/jobs",jobs);
+app.use('/api/job', searchRoute);
 
     app.use(express.json({ extended: false }));
     app.get('/', (req, res) => res.send(__dirname));

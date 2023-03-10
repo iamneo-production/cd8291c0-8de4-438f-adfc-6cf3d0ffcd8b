@@ -6,9 +6,13 @@ import axios from "axios";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+//import Search from "./Search";
+import { useNavigate } from "react-router-dom";
+
 //import { BrowserRouter} from "react-router-dom"
 export default function LoginUser() {
   const [data, setData] = useState({ email: "", password: "" });
+  const nav = useNavigate();
 
   function handleChange(e) {
     setData((data) => ({ ...data, [e.target.name]: e.target.value }));
@@ -31,7 +35,7 @@ export default function LoginUser() {
       );
 
       if (response.status === 200) {
-        window.location.href = '/Home';
+        nav("/search");
       }
     } catch (error) {
       // If there was an error, display an error message to the user
