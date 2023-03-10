@@ -7,7 +7,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.monisha {
+  font-family: "Lato", sans-serif;
+  color: white;
+  font-size: 40px;
+  padding-top: 160px;
+}
+.centering-girl {
+  text-align: center;
 }
