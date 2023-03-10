@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import Container from 'react-bootstrap/Container'
 import { useState } from "react";
 import axios from "axios";
 
@@ -28,43 +29,66 @@ export default function SignupEmployer() {
         });
 }
   return (
-    <div>
-      <Form onSubmit={handleSubmit}>
-          <h1>Want to post a job?</h1>
-      <Row>
-        <Col>
-          <Form.Control onChange={handleChange}  type="text"
+<div className='loginuser-bg'>
+      <Container className='login-con'>
+        <Row>
+          <Col className="opacity" md={{ span: 4, offset: 4 }}>
+            <Form>
+              <h1 className='h1-user text-center'>Want to post a job?</h1>
+              <br></br>
+              <Row>
+                <Col>
+                <Form.Label  onChange={handleChange}  type="text"
                         name="firstname"
-                        value={data.firstname} placeholder="First name" />
-        </Col>
-        <Col>
-          <Form.Control placeholder="Last name" onChange={handleChange}  type="text"
-                        name="lastname"
-                        value={data.lastname} />
-        </Col>
-        <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" onChange={handleChange} 
-                        name="email"
-                        value={data.email} placeholder="Enter email" />
-        <Form.Text className="text-muted">
-          We'll never share your email with anyone else.
-        </Form.Text>
-      </Form.Group>
+                        value={data.firstname} className="email-address">First Name</Form.Label>
+                  <Form.Control placeholder="First name" />
+                </Col>
+                <Col>
+                <Form.Label >Last Name</Form.Label>
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" onChange={handleChange}  
+                  <Form.Control className="email-address" onChange={handleChange}  type="text"
+                        name="lastname"
+                        value={data.lastname} placeholder="Last name" />
+                  <br></br>
+                </Col>
+                <Form.Group className="mb-3" controlId="formBasicEmail">
+                  <Form.Label className="email-address" type="email" onChange={handleChange} 
+                        name="email"
+                        value={data.email} >Email address</Form.Label>
+                  <Form.Control type="email" placeholder="Enter email" />
+                  <Form.Text className="text-muted">
+                    We'll never share your email with anyone else.
+                  </Form.Text>
+                </Form.Group>
+                <Form.Group className="mb-3" controlId="formBasicPassword">
+                  <Form.Label className="email-address">Password</Form.Label>
+                  <Form.Control type="password" type="password" onChange={handleChange}  
                         name="password"
-                        value={data.password}  placeholder="Password" />
-      </Form.Group>
-      <Link to='/signupuser'> <p>Sign up as a User</p></Link>
-      <Button variant="primary" type="submit" className="employer-signup-submit">
-        Submit
-      </Button>
-      </Row>
-    </Form>
-    
+                        value={data.password} placeholder="Password" />
+                </Form.Group>
+                <Link to='/signupuser'> <p className="login-employer" id="spacing">Sign up as a user</p></Link>
+               
+                <Button variant="primary" type="submit" className="user-signup-submit">
+                  SIGN UP
+                </Button>
+               
+              </Row>
+            </Form>
+            <br></br>
+                <br></br>
+                <br></br>
+                
+                
+          </Col>
+        </Row>
+      </Container>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
+      <br></br>
     </div>
   )
 }
