@@ -24,7 +24,7 @@ export default function SignupEmployer() {
         })
         .catch((err) => {
             console.log("Error couldn't create TODO");
-            console.log(err.data.message);
+           // console.log(err.data.message);
         });
 }
   return (
