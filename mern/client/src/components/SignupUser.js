@@ -21,7 +21,7 @@ export default function SignupUser() {
         .post("https://8080-bfadcedcbbcaedacbacdcbdacdccdabcdebacdacedf.project.examly.io/api/user/register", data)
         .then((res) => {
             setData({ firstname: "", lastname: "",email:"",password:"" });
-            console.log(res.data.message);
+            console.log(res.data);
         })
         .catch((err) => {
             console.log("Error couldn't create TODO");

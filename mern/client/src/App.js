@@ -87,7 +87,7 @@ function App() {
           </Routes>
         </div>
       </div>
-      <div className="footer" id="lol">
+      {/* <div className="footer" id="lol">
             <br></br>
             <br></br>
             <br></br>
@@ -154,8 +154,8 @@ function App() {
               </Row>
         
         </Container>
-        </div>
-    </BrowserRouter>
+        </div> */}
+    {/* </BrowserRouter> */}
   );
 }
 
