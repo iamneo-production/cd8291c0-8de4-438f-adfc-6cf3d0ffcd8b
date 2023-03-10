@@ -27,9 +27,11 @@ export default function LoginEmployer() {
         <Form.Control type="password" placeholder="Password" />
       </Form.Group>
       <Link to='/loginuser' className="login-employer"> <p>Log in as a user</p></Link>
+      <Link to="/postajob">
       <Button variant="primary" type="submit" className="user-submit">
         Submit
       </Button>
+      </Link>
       <br></br>
       <br></br>
       <br></br>

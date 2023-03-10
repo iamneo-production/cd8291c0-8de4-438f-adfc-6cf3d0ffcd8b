@@ -28,11 +28,20 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.contact-bg, .about-bg, .loginuser-bg{
+.contact-bg, .about-bg, .loginuser-bg, .faq-bg, .postjob-bg{
 	background: -webkit-linear-gradient(#8a1212, #371c71);
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 90%, 0 100%);
 	z-index: 2 !important;
 	
+}
+.heading-profile{
+	font-family: 'Lato', sans-serif !important;
+}
+.profile-bg{
+	clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 97%, 0 100%);
+	background: -webkit-linear-gradient(#8a1212, #371c71);
+	z-index: 2 !important;
+	padding-bottom: 150px;
 }
 .contact-bg{
 	z-index: 3;
@@ -46,7 +55,7 @@
 }
 .about-para{
 	color: white !important;
-	padding-top: 150px;
+	padding-top: 140px;
 }
 .footer {
   
@@ -101,7 +110,18 @@
  	z-index: 2 !important;
 	
 }
-
+.card {
+    text-align: center !important;
+    margin: 0 auto; /* Added */
+    float: none; /* Added */
+    margin-bottom: 10px; /* Added */
+  }
+  #card1 {
+	background: -webkit-linear-gradient(#ffffff, #21107e) !important;
+  }
+  #card2 {
+	background: -webkit-linear-gradient(#ffffff, #962622) !important;
+  }
 .small-statement{
   font-size: 14px;
 }
@@ -152,6 +172,18 @@
 .icon5 {
   padding-left: 7px;
   padding-right: 7px;
+}
+
+.heading-profile{
+	color: white;
+	
+}
+.button1{
+	padding-right: 10px;
+}
+.button1{
+	margin-top: 5px;
+	margin-bottom: 5px;
 }
 @keyframes funny-icon {
 	0% {
@@ -298,4 +330,293 @@ button a {
 	text-align: end;
 	color: white;
 	text-decoration: none !important;
+}
+.my-second-container {
+	width: 100%;
+	max-width: 80rem;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+  }
+  
+  .accordion {
+	text-align: left;
+  }
+  
+  .accordion-item {
+	border-radius: 0.4rem;
+	margin-bottom: 1rem;
+	padding: 1rem;
+	box-shadow: 0.5rem 2px 0.5rem rgba(0, 0, 0, 0.1);
+  }
+  
+  .accordion-link {
+	font-size: 1.2rem;
+	color: rgba(201, 25, 25, 0.8);
+	text-decoration: none;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+  }
+  
+  .accordion-link .fa-minus {
+	display: none;
+  }
+  
+  .answer {
+	max-height: 0;
+	position: relative;
+	overflow: hidden;
+	font-size: 1rem;
+	transition: max-height 650ms;
+  }
+  
+  .answer::before {
+	content: "";
+	position: absolute;
+	width: 0.6rem;
+	background-color: #8fc460;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+  }
+  .my-container {
+	margin-bottom: 30px;
+  }
+  .answer p {
+	font-size: 1rem;
+	padding: 1rem;
+  }
+  
+  .accordion-item:target .answer {
+	max-height: 10rem;
+  }
+  
+  .accordion-item:target .accordion-link .fa-plus {
+	display: none;
+  }
+  
+  .accordion-item:target .accordion-link .fa-minus {
+	display: block;
+  }
+  p.accordion {
+	background-color: #eee;
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	margin-bottom: 10px;
+  }
+	.space h2 {
+	font-family: "Zen Tokyo Zoo", cursive;
+	margin-bottom: 40px;
+	text-decoration-line: underline;
+	font-size: 35px;
+	text-decoration-color: rgb(37, 37, 97);
+	text-decoration-thickness: 5px;
+  }
+  
+  .partner-btn h1 {
+	font-family: "Zen Tokyo Zoo", cursive;
+  
+	text-decoration-line: underline;
+	font-size: 45px;
+	text-decoration-color: rgb(37, 37, 97);
+	text-decoration-thickness: 5px;
+  }
+  /* Add a background color to the accordion if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
+  p.accordion.active,
+  p.accordion:hover {
+	background-color: #ddd;
+  }
+  
+  /* Unicode character for "plus" sign (+) */
+  p.accordion:after {
+	content: "\2795";
+	font-size: 13px;
+	color: #777;
+	float: right;
+	margin-left: 5px;
+  }
+  
+  /* Unicode character for "minus" sign (-) */
+  p.accordion.active:after {
+	content: "\2796";
+  }
+  
+  /* Style the element that is used for the panel class */
+  
+  div.panel {
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: 0.4s ease-in-out;
+	opacity: 0;
+	margin-bottom: 10px;
+  }
+  
+  div.panel.show {
+	opacity: 1;
+	max-height: 500px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+  }
+  
+  .accordion {
+	background-color: rgba(109, 125, 139, 0.712);
+	color: #444;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	border: none;
+	text-align: left;
+	outline: none;
+	font-size: 15px;
+	transition: 0.4s;
+  }
+  
+  .active,
+  .accordion:hover {
+	background-color: rgba(49, 48, 78, 0.779);
+  }
+  
+  .panel {
+	padding: 0 18px;
+	display: none;
+	background-color: white;
+	overflow: hidden;
+  }
+
+  #spacing{
+	  padding-bottom: 15px;
+  }
+  .containers{
+	padding-top: 40px !important;
+	margin-top: 40px;
+	margin: auto;
+    max-width: 700px;
+    width: 100%;
+    background: #a3d7e747;
+    padding: 25px 30px;
+	color: white;
+    border-radius: 5px;
+}
+.containers  .title{
+    font-size: 35px;
+    font-weight: 500; 
+    position: relative;
+	color: white;
+}
+.containers .title::before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+	
+    height: 3px;
+    width: 30px;
+    background: linear-gradient(123deg, #71b8e7,#9b59b6);
+}
+.containers form .user_details{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+form .user_details .input_pox{
+    margin-bottom: 15px;
+    margin: 20px 0 12px 0;
+    width: calc(100% / 2 - 20px);
+}
+.user_details .input_pox .datails{
+    display: block;
+    font-weight: 500;
+    margin-bottom: 5px;
+}
+.user_details .input_pox input{
+    height: 45px;
+    width: 100%;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding-left: 15px;
+    font-size: 16px;
+    border-bottom-width: 2px;
+    transition: all 0.3s ease;
+
+}
+.user_details .input_pox input:focus,
+.user_details .input_pox input:valid{
+border-color: #9b59b6;
+}
+form .gender_details .gender_title{
+    font-size: 20px;
+    font-weight: 500;
+}
+form .gender_details .category{
+    display: flex;
+    width: 80%;
+    margin: 14px 0;
+    justify-content: space-between;
+}
+.gender_details .category label{
+display: flex;
+}
+.gender_details .category .dot{
+height: 18px;
+width: 18px;
+background: #d9d9d9;
+border-radius: 50%;
+margin-right: 10px;
+border: 5px solid transparent;
+}
+#dot-1:checked ~ .category label .one,
+#dot-2:checked ~ .category label .two,
+#dot-3:checked ~ .category label .three{
+border-color: #9d8f8f;
+background-color: #9b59b6;
+}
+form input[type="radio"]{
+    display: none;
+}
+form .button{
+    height: 45px;
+    margin: 45px 0;
+}
+form .button input{
+    height: 100%;
+    width: 100%;
+    outline: none;
+    color: #fff;
+    border: none;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    letter-spacing: 1px;
+    background: linear-gradient(123deg, #71b8e7,#9b59b6);
+
+}
+form .button input :hover{
+    background: linear-gradient(-123deg, #71b8e7,#9b59b6);
+}
+@media (max-width: 584px){
+    .container{
+        max-width: 100%;
+    }
+    form .user_details .input_pox{
+        margin-bottom: 15px;
+        width:100%;
+    }
+    form .gender_details .category{
+        width: 100%;
+    }
+    .containers form .user_details{
+        max-height: 300px;
+        overflow: scroll;
+    }
+    .user_details::-webkit-scrollber{
+     width: 0;
+    }
 }
