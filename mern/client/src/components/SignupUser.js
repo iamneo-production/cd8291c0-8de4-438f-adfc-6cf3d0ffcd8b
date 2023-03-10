@@ -25,7 +25,7 @@ export default function SignupUser() {
         })
         .catch((err) => {
             console.log("Error couldn't create TODO");
-            console.log(err.message);
+            console.log(err.data.message);
         });
 }
   return (
