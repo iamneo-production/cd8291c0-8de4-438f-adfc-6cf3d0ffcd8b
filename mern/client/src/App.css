@@ -5,13 +5,30 @@
 .dream{
   font-size: 45px;
 }
+
+.login-con{
+	
+	padding-top: 60px;
+
+}
+
+.opacity{
+	padding-top: 30px;
+	background-color: rgba(46, 44, 46, 0.307);
+	border-radius: 30px;
+
+}
+.h1-user{
+	text-decoration: underline;
+	color: white;
+}
 .word{
   font-style: 'Lato', sans-serif;
   background: -webkit-linear-gradient(#ffffff, #371d69);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
-.contact-bg, .about-bg{
+.contact-bg, .about-bg, .loginuser-bg{
 	background: -webkit-linear-gradient(#8a1212, #371c71);
 	clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 90%, 0 100%);
 	z-index: 2 !important;
@@ -271,3 +288,14 @@ button a {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 65% 90%, 0 100%);
 }
 
+.email-address{
+	color: white;
+}
+.text-muted{
+	color: wheat !important;
+}
+.login-employer{
+	text-align: end;
+	color: white;
+	text-decoration: none !important;
+}
