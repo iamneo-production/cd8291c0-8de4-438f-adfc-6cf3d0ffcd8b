@@ -1,9 +1,10 @@
-import React from 'react'
+import {React,useState} from 'react'
 import Form from 'react-bootstrap/Form';
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import {Link} from 'react-router-dom'
 import Button from 'react-bootstrap/Button'
+import axios from "axios";
 export default function SignupUser() {
   
   const [data, setData] = useState({ firstname: "", lastname: "",email:"", password:"" });
@@ -31,14 +32,14 @@ export default function SignupUser() {
           <h1>Looking for a Job?</h1>
       <Row>
         <Col>
-          <Form.Control onChange={handleChange} placeholder="First name" />
+          <Form.Control onChange={handleChange} name="firstname" value={data.firstname} placeholder="First name" />
         </Col>
         <Col>
-          <Form.Control onChange={handleChange} placeholder="Last name" />
+          <Form.Control onChange={handleChange}name="lastname" value={data.lastname} placeholder="Last name" />
         </Col>
         <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
-        <Form.Control onChange={handleChange} type="email" placeholder="Enter email" />
+        <Form.Control onChange={handleChange} name="email" value={data.email} type="email" placeholder="Enter email" />
         <Form.Text className="text-muted">
           We'll never share your email with anyone else.
         </Form.Text>
@@ -46,7 +47,7 @@ export default function SignupUser() {
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
-        <Form.Control onChange={handleChange} type="password" placeholder="Password" />
+        <Form.Control onChange={handleChange} name="password" value={data.password} type="password" placeholder="Password" />
       </Form.Group>
       <Link to='/signupemployer'> <p>Sign up as an employer</p></Link>
       <Button variant="primary" type="submit" className="user-signup-submit">
