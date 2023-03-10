@@ -14,7 +14,7 @@ exports.searchJobs = async (req, res) => {
   const filter = {};
 
   if (location) {
-    filter.location = location;
+    filter.location = {$regex: location, $options: 'i'};
   }
 
   if (salary) {
@@ -22,11 +22,11 @@ exports.searchJobs = async (req, res) => {
   }
 
   if (jobRole) {
-    filter.jobRole = jobRole;
+    filter.jobRole =  {$regex: jobRole, $options: 'i'};
   }
 
   if (company) {
-    filter.company = company;
+    filter.company =  {$regex: company, $options: 'i'};
   }
 
   const query = {};
