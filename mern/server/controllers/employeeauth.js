@@ -17,14 +17,7 @@ const { firstname,lastname, email, password } = req.body;
         if(user) return res.status(400).json({msg: 'User already exists'});
 
         const newUser = new User({ firstname,lastname, email, password });
-        // User.create(req.body)
-        // .then((data) => res.json({ message: "Logged in", data }))
-        // .catch((err) =>
-        //     res
-        //         .status(400)
-        //         .json({ message: "Unable to login", error: err.message })
-        // );
-        // Create salt and hash
+        
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(password, salt, (err, hash) => {
                 if(err) throw err;
@@ -56,53 +49,19 @@ const { firstname,lastname, email, password } = req.body;
   console.log(req.body) 
 }
 
-//   User.create(req.body)
-//         .then((data) => {
-//             console.log({ data });
-//             res.json({ message: "todo added successfully", data });
-//         })
-//         .catch((err) =>
-//             res.status(400).json({
-//                 message: "unable to add new todo",
-//                 error: err.message,
-//             })
-//         );
-//     const {firstname,lastname,email,password} =req.body;
-//     User.findOne({email:email},(err,user)=>{
-//         if(user){
-//             res.send({message:"user already exist"})
-//         }else {
-//             const user = new User({firstname,lastname,email,password})
-//             user.save(err=>{
-//                 if(err){
-//                     res.send(err)
-//                 }else{
-//                     res.send({message:"sucessfull"})
-//                 }
-//             })
-//         }
-//     })
-// }
+
 
 module.exports.login = async (req,res) => {
+    console.log("this is email",req.query.email)
     const email = req.query.email;
     const password = req.query.password;
-    // const { email, password } = req.body;
-    // if(!email || !password){
-    //     res.status(400).json({msg: 'Please enter all fields'});
-    // }
-    // User.findOne({email})
-    //     .then(user => {
-    //         if(!user) return res.status(400).json({msg: 'User does not exist'});
-
-            
-    //     })
-
-    console.log(email);
+    
+    console.log("email is",email);
+    console.log(password);
     try {
         // Retrieve the user from the database
         const user = await User.findOne({ email: email });
-    
+       // console.log(user.password);
         // Compare the hashed password in the database with the password provided by the user
         const isMatch = await bcrypt.compare(password, user.password);
     

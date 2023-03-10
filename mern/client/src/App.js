@@ -155,7 +155,7 @@ function App() {
         
         </Container>
         </div> */}
-    {/* </BrowserRouter> */}
+    </BrowserRouter>
   );
 }
 

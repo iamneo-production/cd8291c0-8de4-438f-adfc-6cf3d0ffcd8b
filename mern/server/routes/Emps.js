@@ -9,11 +9,11 @@ const {
     get_user
     
     
-} = require("../controllers/userauth");
+} = require("../controllers/employeeauth");
 
 
 router.post('/register',signup);
 router.post('/login', login)
-router.get('/user', auth,get_user);
+router.get('/employee', auth,get_user);
 
 module.exports = router;
