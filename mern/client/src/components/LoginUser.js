@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
+import { toast } from 'react-toastify';
 import axios from "axios";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -36,12 +36,25 @@ export default function LoginUser() {
       );
 
       if (response.status === 200) {
+        
         nav("/search");
+        toast.success("Logged In Successfully");
       }
+      
     } catch (error) {
       // If there was an error, display an error message to the user
-      console.log("Error message: ", error.message);
-      console.log("Error message: ", error.response.data);
+      if (error.response.status === 401) {
+        console.log(data.email);
+        console.log(data.password);
+       
+        toast.error("Wrong Password");
+      }
+      if (error.response.status === 500) {
+        console.log(data.email);
+        console.log(data.password);
+        
+        toast.error("User not Registered");
+      }
     }
   };
 

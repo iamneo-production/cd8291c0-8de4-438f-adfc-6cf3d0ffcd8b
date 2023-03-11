@@ -4,6 +4,7 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Container from 'react-bootstrap/Container';
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify';
 import Button from 'react-bootstrap/Button'
 import { useState } from "react";
 import axios from "axios";
@@ -22,10 +23,12 @@ export default function SignupUser() {
         .then((res) => {
             setData({ firstname: "", lastname: "",email:"",password:"" });
             console.log(res.data);
+            toast.success("Registered Successfully")
         })
         .catch((err) => {
             console.log("Error couldn't create TODO");
-            console.log(err.data.message);
+            console.log(err.status);
+            toast.error("Email already Registered");
         });
 }
   return (

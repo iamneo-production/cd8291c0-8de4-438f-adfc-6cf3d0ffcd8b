@@ -1,5 +1,6 @@
 import {useState,React} from 'react'
 import axios from "axios"
+import {toast} from "react-toastify"
 function PostJob() {
 
     const [data, setData] = useState({ company: "", location: "", salary:"", jobRole:"" });
@@ -19,6 +20,7 @@ function PostJob() {
           .then((res) => {
               setData({ company: "", location: "", salary:"", jobRole:""});
               console.log(res.data);
+              toast.success("Job posted")
           })
           .catch((err) => {
               console.log("Error couldn't create TODO");

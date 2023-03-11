@@ -22,10 +22,12 @@ export default function SignupEmployer() {
         .then((res) => {
             setData({ firstname: "", lastname: "",email:"",password:"" });
             console.log(res.data);
+            toast.success("Registered Successfully")
         })
         .catch((err) => {
-            console.log("Error couldn't create TODO");
+            console.log("Error couldn't register");
            // console.log(err.data.message);
+           toast.error("Email already Registered")
         });
 }
   return (
