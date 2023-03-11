@@ -48,8 +48,8 @@ export default function Home() {
                 </button>
               </div>
                 <p className="popular">Popular Searches:
-                  Data Analytics
-                  UX research</p>
+                  Bangalore,
+                    New Delhi</p>
                 <br></br>
                 <ScrollTrigger><Row>
                   <Col>

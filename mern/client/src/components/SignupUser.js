@@ -26,7 +26,7 @@ export default function SignupUser() {
             toast.success("Registered Successfully")
         })
         .catch((err) => {
-            console.log("Error couldn't create TODO");
+           // console.log("Error couldn't create TODO");
             console.log(err.status);
             toast.error("Email already Registered");
         });
