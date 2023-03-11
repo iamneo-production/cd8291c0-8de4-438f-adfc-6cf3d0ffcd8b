@@ -5,7 +5,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Stack from 'react-bootstrap/Stack';
-import Button from 'react-bootstrap/Button'
+import Button from 'react-bootstrap/Button';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('');
@@ -14,6 +16,9 @@ function App() {
   const [company, setCompany] = useState('');
   const [jobs, setJobs] = useState([]);
 
+  const handleClick = () => {
+    toast.success('Applied successfully!');
+  }
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get('https://8080-bfadcedcbbcaedacbacdcbdacdccdabcdebacdacedf.project.examly.io/api/job/search', {
@@ -105,7 +110,7 @@ function App() {
             <Col className="com" sm>{job.location}</Col>
             <Col className="com" sm>{job.salary}</Col>
             <Col className="com" sm>{job.jobRole}</Col>
-            <Col className="button-job"><Button variant="info">APPLY</Button></Col>
+            <Col className="button-job" ><Button id="myButton" onClick={handleClick}  variant="info">APPLY</Button></Col>
             <hr className="white"></hr>
           </Row>
           </Stack>
