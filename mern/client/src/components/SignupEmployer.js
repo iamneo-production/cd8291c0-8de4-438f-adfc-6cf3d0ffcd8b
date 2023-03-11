@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import { useState } from "react";
 import axios from "axios";
+import {toast} from "react-toastify";
 
 export default function SignupEmployer() {
   const [data, setData] = useState({ firstname: "", lastname: "",email:"", password:"" });
@@ -22,12 +23,12 @@ export default function SignupEmployer() {
         .then((res) => {
             setData({ firstname: "", lastname: "",email:"",password:"" });
             console.log(res.data);
-            toast.success("Registered Successfully")
+            toast.success("Registered Successfully");
         })
         .catch((err) => {
             console.log("Error couldn't register");
            // console.log(err.data.message);
-           toast.error("Email already Registered")
+           toast.error("Email already Registered");
         });
 }
   return (

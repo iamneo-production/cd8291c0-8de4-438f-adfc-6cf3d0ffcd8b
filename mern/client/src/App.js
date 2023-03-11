@@ -1,7 +1,10 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+
 import Search from "./components/Search";
 import About from "./components/About";
+import Chatbot from "react-chatbot-kit";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Profiles from "./components/Profiles";
@@ -91,6 +94,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/postajob" element={<PostJob  />}/>
+            
           </Routes>
         </div>
       </div>
@@ -161,6 +165,7 @@ function App() {
               </Row>
         
         </Container>
+        
         </div>
     </BrowserRouter>
   );

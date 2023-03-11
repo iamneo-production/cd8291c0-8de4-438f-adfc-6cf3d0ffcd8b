@@ -5,7 +5,9 @@ const connectDB = require("./config/db"); //added
 const users = require("./routes/Users"); // added
 const emps = require("./routes/Emps");
 const searchRoute = require('./routes/Search');
+const resume= require('./controllers/resume');
 const jobs = require("./controllers/jobs");
+
 const path=require("path");
 const cors = require('cors');
 const bodyParser = require('body-parser');
@@ -18,6 +20,7 @@ app.use(cors());
 connectDB();//added
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
+
 
 
 // initialize middleware
