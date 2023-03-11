@@ -86,10 +86,11 @@ function App() {
             <Route path="/profile" element={<Profiles />} />
             <Route path="/loginemployer" element={<LoginEmployer />} />
             <Route path="/signupemployer" element={<SignupEmployer />} />
-            <Route path="/postajob" element={<PostJob/>}/>
+            
 
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/postajob" element={<PostJob  />}/>
           </Routes>
         </div>
       </div>

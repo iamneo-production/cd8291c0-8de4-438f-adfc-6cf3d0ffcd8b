@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-import { Link} from "react-router-dom";
+
 import axios from "axios";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Form from 'react-bootstrap/Form';
+
 import { Link, BrowserRouter } from "react-router-dom"
 //import Search from "./Search";
 import { useNavigate } from "react-router-dom";
@@ -27,13 +27,12 @@ export default function LoginUser() {
     try {
       const response = await axios.post(
         "https://8080-bfadcedcbbcaedacbacdcbdacdccdabcdebacdacedf.project.examly.io/api/user/login",
-  null,
-  {
-    params: {
+   null,
+   {params:{
       email: data.email,
       password: data.password,
-    },
-  }
+    
+  },}
       );
 
       if (response.status === 200) {

@@ -1,4 +1,4 @@
-const User = require('../models/Emp');
+const Emp = require('../models/Emp');
 const jwt = require('jsonwebtoken');
 const config = require('config');
 const bcrypt = require('bcrypt');
@@ -12,11 +12,11 @@ const { firstname,lastname, email, password } = req.body;
         res.status(400).json({msg: 'Please enter all fields'});
     }
 
-    User.findOne({email})
+    Emp.findOne({email})
     .then(user => {
         if(user) return res.status(400).json({msg: 'User already exists'});
 
-        const newUser = new User({ firstname,lastname, email, password });
+        const newUser = new Emp({ firstname,lastname, email, password });
         
         bcrypt.genSalt(10, (err, salt) => {
             bcrypt.hash(password, salt, (err, hash) => {
@@ -52,15 +52,16 @@ const { firstname,lastname, email, password } = req.body;
 
 
 module.exports.login = async (req,res) => {
-    console.log("this is email",req.query.email)
-    const email = req.query.email;
-    const password = req.query.password;
+    // console.log("this is email",req.query.email)
+    // const email = req.query.email;
+    // const password = req.query.password;
+    const {email,password}=req.body;
     
     console.log("email is",email);
     console.log(password);
     try {
         // Retrieve the user from the database
-        const user = await User.findOne({ email: email });
+        const user = await Emp.findOne({ email: email });
        // console.log(user.password);
         // Compare the hashed password in the database with the password provided by the user
         const isMatch = await bcrypt.compare(password, user.password);
@@ -80,7 +81,7 @@ module.exports.login = async (req,res) => {
 
 
 module.exports.get_user = (req,res) => {
-    User.findById(req.user.email)
+    Emp.findById(req.user.email)
         .select('-password')
         .then(user => res.json(user));
 

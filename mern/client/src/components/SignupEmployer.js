@@ -33,29 +33,29 @@ export default function SignupEmployer() {
       <Container className='login-con'>
         <Row>
           <Col className="opacity" md={{ span: 4, offset: 4 }}>
-            <Form>
+            <Form onSubmit={handleSubmit} >
               <h1 className='h1-user text-center'>Want to post a job?</h1>
               <br></br>
               <Row>
                 <Col>
-                <Form.Label  onChange={handleChange}  type="text"
+                <Form.Label  className="email-address">First Name</Form.Label>
+                  <Form.Control onChange={handleChange}  type="text"
                         name="firstname"
-                        value={data.firstname} className="email-address">First Name</Form.Label>
-                  <Form.Control placeholder="First name" />
+                        value={data.firstname}  placeholder="First name" />
                 </Col>
                 <Col>
-                <Form.Label >Last Name</Form.Label>
+                <Form.Label  className="email-address">Last Name</Form.Label>
 
-                  <Form.Control className="email-address" onChange={handleChange}  type="text"
+                  <Form.Control  onChange={handleChange}  type="text"
                         name="lastname"
                         value={data.lastname} placeholder="Last name" />
                   <br></br>
                 </Col>
                 <Form.Group className="mb-3" controlId="formBasicEmail">
-                  <Form.Label className="email-address" type="email" onChange={handleChange} 
+                  <Form.Label className="email-address" type="email" >Email address</Form.Label>
+                  <Form.Control  onChange={handleChange} 
                         name="email"
-                        value={data.email} >Email address</Form.Label>
-                  <Form.Control type="email" placeholder="Enter email" />
+                        value={data.email} type="email" placeholder="Enter email" />
                   <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
                   </Form.Text>

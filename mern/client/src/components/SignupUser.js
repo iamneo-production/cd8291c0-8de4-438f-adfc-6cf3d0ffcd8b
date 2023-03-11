@@ -9,7 +9,6 @@ import { useState } from "react";
 import axios from "axios";
 
 export default function SignupUser() {
-
   const [data, setData] = useState({ firstname: "", lastname: "",email:"", password:"" });
 
   function handleChange(e) {
