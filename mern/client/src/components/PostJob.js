@@ -1,5 +1,6 @@
 import {useState,React} from 'react'
 import axios from "axios"
+import {toast} from "react-toastify"
 function PostJob() {
 
     const [data, setData] = useState({ company: "", location: "", salary:"", jobRole:"" });
@@ -19,6 +20,7 @@ function PostJob() {
           .then((res) => {
               setData({ company: "", location: "", salary:"", jobRole:""});
               console.log(res.data);
+              toast.success("Job posted")
           })
           .catch((err) => {
               console.log("Error couldn't create TODO");
@@ -40,20 +42,20 @@ function PostJob() {
         <div class="user_details">
             <div class="input_pox">
                 <span class="datails">Job Role</span>
-                <input name="jobRole" value={data.jobRole} onChange={handleChange} type="text" placeholder="enter your job role" required/>
+                <input name="jobRole" required value={data.jobRole} onChange={handleChange} type="text" placeholder="enter your job role" required/>
             </div>
             <div class="input_pox">
                 <span class="datails">Company Name</span>
-                <input  name="company" value={data.company} onChange={handleChange}type="text" placeholder="enter your company name" required/>
+                <input  name="company" required value={data.company} onChange={handleChange}type="text" placeholder="enter your company name" required/>
             </div>
             <div class="input_pox">
                 <span class="datails">Salary</span>
-                <input  name="salary" value={data.salary} onChange={handleChange}type="text" placeholder="enter salary offered" required/>
+                <input  name="salary" required value={data.salary} onChange={handleChange}type="number" placeholder="enter salary offered" required/>
             </div>
             
             <div class="input_pox">
                 <span class="datails">Location</span>
-                <input name="location" value={data.location} onChange={handleChange}type="text" placeholder="enter preferred location" required/>
+                <input name="location" required value={data.location} onChange={handleChange}type="text" placeholder="enter preferred location" required/>
             </div>
             
         </div>

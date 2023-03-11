@@ -7,6 +7,7 @@ import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast } from 'react-toastify';
 
 export default function LoginEmployer() {
   const [data, setData] = useState({ email: "", password: "" });
@@ -34,11 +35,24 @@ export default function LoginEmployer() {
         console.log(data.email);
         console.log(data.password);
         nav("/postajob");
+        toast.success("Logged In Successfully");
       }
+     
     } catch (error) {
+      //console.log(error.status);
       // If there was an error, display an error message to the user
-      console.log("Error message: ", error.message);
-      console.log("Error message: ", error.response.data);
+      if (error.response.status === 401) {
+        console.log(data.email);
+        console.log(data.password);
+       
+        toast.error("Wrong Password");
+      }
+      if (error.response.status === 500) {
+        console.log(data.email);
+        console.log(data.password);
+     
+        toast.error("Employee not Registered");
+      }
     }
   };
 
@@ -52,7 +66,7 @@ export default function LoginEmployer() {
               <br></br>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="email-address">Email address</Form.Label>
-                <Form.Control
+                <Form.Control required
                   onChange={handleChange}
                   name="email"
                   value={data.email}
@@ -66,7 +80,7 @@ export default function LoginEmployer() {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label className="email-address">Password</Form.Label>
-                <Form.Control
+                <Form.Control required
                   onChange={handleChange}
                   name="password"
                   value={data.password}

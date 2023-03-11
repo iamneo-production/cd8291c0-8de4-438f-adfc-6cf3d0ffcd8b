@@ -1,7 +1,10 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
+
+import Resume from "./components/Resume";
 import Search from "./components/Search";
 import About from "./components/About";
+import Chatbot from "react-chatbot-kit";
 import Faq from "./components/Faq";
 import Contact from "./components/Contact";
 import Profiles from "./components/Profiles";
@@ -20,6 +23,7 @@ import LoginUser from "./components/LoginUser"
 import Home from "./components/Home";
 import LoginEmployer from "./components/LoginEmployer";
 import React from 'react';
+import Career from "./components/Career";
 import SignupUser from "./components/SignupUser";
 import Row from "react-bootstrap/Row"
 import Col from "react-bootstrap/Col"
@@ -30,7 +34,7 @@ function App() {
     
     <BrowserRouter>
       <div className="App">
-        <Navbar bg="dark" expand="lg" variant="dark">
+        <Navbar bg="dark" expand="lg" variant="dark" className="nav-color">
           <Container fluid>
             <Navbar.Brand href="#" className="brand-name">Galcareer</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
@@ -46,6 +50,9 @@ function App() {
                 </Nav.Link>
                 <Nav.Link as={Link} to="/about" className="Link2">
                   ABOUT US
+                </Nav.Link>
+                <Nav.Link as={Link} to="/career" className="Link6">
+                  CAREERS
                 </Nav.Link>
                 <Nav.Link as={Link} to="/profile" className="Link5">
                   PROFILES
@@ -90,7 +97,10 @@ function App() {
 
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
+            <Route path="/career" element={<Career />} />
             <Route path="/postajob" element={<PostJob  />}/>
+            <Route path="/resume" element={<Resume />}/>
+            
           </Routes>
         </div>
       </div>
@@ -161,6 +171,7 @@ function App() {
               </Row>
         
         </Container>
+        
         </div>
     </BrowserRouter>
   );
