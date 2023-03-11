@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-
+import {Link} from 'react-router-dom'
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import Stack from 'react-bootstrap/Stack';
+import Button from 'react-bootstrap/Button';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const [location, setLocation] = useState('');
@@ -9,6 +16,9 @@ function App() {
   const [company, setCompany] = useState('');
   const [jobs, setJobs] = useState([]);
 
+  const handleClick = () => {
+    toast.success('Applied successfully!');
+  }
   useEffect(() => {
     async function fetchData() {
       const { data } = await axios.get('https://8080-bfadcedcbbcaedacbacdcbdacdccdabcdebacdacedf.project.examly.io/api/job/search', {
@@ -46,49 +56,72 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Search Jobs</h1>
-      <input
-        type="text"
-        placeholder="Search query"
-        value={searchQuery}
-        onChange={handleSearchQueryChange}
-      />
-      <input
-        type="text"
-        placeholder="Location"
-        value={location}
-        onChange={handleLocationChange}
-      />
-      <input
-        type="number"
-        placeholder="Minimum Salary"
-        value={salary}
-        onChange={handleSalaryChange}
-      />
-      <input
-        type="text"
-        placeholder="Job Role"
-        value={jobRole}
-        onChange={handleJobRoleChange}
-      />
-      <input
+    <div className="search-bg">
+      <h1 className="text-center" id="search-jobs">Search Jobs</h1>
+     
+     
+      
+      
+     
+      <Container>
+      <Row>
+        <Col className="input-field" sm> <input
+        className="input-job"
         type="text"
         placeholder="Company"
         value={company}
         onChange={handleCompanyChange}
-      />
-      <ul>
+      /></Col>
+        <Col className="input-field" sm> <input
+        className="input-job"
+        type="text"
+        placeholder="Location"
+        value={location}
+        onChange={handleLocationChange}
+      /></Col>
+        
+      <Col className="input-field" sm><input
+      className="input-job"
+        type="text"
+        placeholder="Minimum Salary"
+        value={salary}
+        onChange={handleSalaryChange}
+      /></Col>
+        <Col className="input-field" sm><input
+        className="input-job"
+        type="text"
+        placeholder="Job Role"
+        value={jobRole}
+        onChange={handleJobRoleChange}
+      /></Col>
+        <Col sm></Col>
+      </Row>
+      
+    </Container>
+    <div>
+      <br></br>
+      
+      <Container className='job-con'>
         {jobs.map(job => (
-          <li key={job._id}>
+          <Stack>
+          <Row className="job-row" key={job._id}>
             
-            <p>{job.company}</p>
-            <p>{job.location}</p>
-            <p>{job.salary}</p>
-            <p>{job.jobRole}</p>
-          </li>
+            <Col className="com" sm>{job.company}</Col>
+            <Col className="com" sm>{job.location}</Col>
+            <Col className="com" sm>{job.salary}</Col>
+            <Col className="com" sm>{job.jobRole}</Col>
+            <Col className="button-job" ><Button id="myButton" onClick={handleClick}  variant="info">APPLY</Button></Col>
+            <hr className="white"></hr>
+          </Row>
+          </Stack>
         ))}
-      </ul>
+      </Container>
+
+      </div>
+      
+      <br></br>
+      
+      
     </div>
   );
 }

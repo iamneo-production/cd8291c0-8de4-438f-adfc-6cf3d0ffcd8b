@@ -7,6 +7,7 @@ import Button from 'react-bootstrap/Button'
 import Container from 'react-bootstrap/Container'
 import { useState } from "react";
 import axios from "axios";
+import {toast} from "react-toastify";
 
 export default function SignupEmployer() {
   const [data, setData] = useState({ firstname: "", lastname: "",email:"", password:"" });
@@ -22,10 +23,12 @@ export default function SignupEmployer() {
         .then((res) => {
             setData({ firstname: "", lastname: "",email:"",password:"" });
             console.log(res.data);
+            toast.success("Registered Successfully");
         })
         .catch((err) => {
-            console.log("Error couldn't create TODO");
+            console.log("Error couldn't register");
            // console.log(err.data.message);
+           toast.error("Email already Registered");
         });
 }
   return (
@@ -39,14 +42,14 @@ export default function SignupEmployer() {
               <Row>
                 <Col>
                 <Form.Label  className="email-address">First Name</Form.Label>
-                  <Form.Control onChange={handleChange}  type="text"
+                  <Form.Control onChange={handleChange} required type="text"
                         name="firstname"
                         value={data.firstname}  placeholder="First name" />
                 </Col>
                 <Col>
                 <Form.Label  className="email-address">Last Name</Form.Label>
 
-                  <Form.Control  onChange={handleChange}  type="text"
+                  <Form.Control  onChange={handleChange} required type="text"
                         name="lastname"
                         value={data.lastname} placeholder="Last name" />
                   <br></br>
@@ -54,7 +57,7 @@ export default function SignupEmployer() {
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="email-address" type="email" >Email address</Form.Label>
                   <Form.Control  onChange={handleChange} 
-                        name="email"
+                        name="email" required
                         value={data.email} type="email" placeholder="Enter email" />
                   <Form.Text className="text-muted">
                     We'll never share your email with anyone else.
@@ -62,7 +65,7 @@ export default function SignupEmployer() {
                 </Form.Group>
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className="email-address">Password</Form.Label>
-                  <Form.Control type="password" type="password" onChange={handleChange}  
+                  <Form.Control type="password" required type="password" onChange={handleChange}  
                         name="password"
                         value={data.password} placeholder="Password" />
                 </Form.Group>

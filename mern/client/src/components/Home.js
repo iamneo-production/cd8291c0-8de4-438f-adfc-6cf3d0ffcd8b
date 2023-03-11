@@ -1,4 +1,5 @@
 import { React, useState } from 'react'
+import Chatbot from "react-chatbot-kit";
 import imageOfGirl from "./2021flat_231.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -11,6 +12,7 @@ export default function Home() {
   return (
     <div className="home">
       <div id="home">
+     
         <Container className="wave">
           <Row>
             <Col sm={6} className="monisha">
@@ -46,8 +48,8 @@ export default function Home() {
                 </button>
               </div>
                 <p className="popular">Popular Searches:
-                  Data Analytics
-                  UX research</p>
+                  Bangalore,
+                    New Delhi</p>
                 <br></br>
                 <ScrollTrigger><Row>
                   <Col>
@@ -70,14 +72,17 @@ export default function Home() {
                   width="100%"
                   className="justify-content-end text-end"
                   id="girl-image"
-                ></img></div>
+                ></img>
+                
+                </div>
             </Col>
           </Row>
           <br></br>
           <br></br>
           <br></br>
         </Container>
-      </div>
+      </div>cd ..
+
     </div>
   )
 }

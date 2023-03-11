@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
-
+import { toast } from 'react-toastify';
 import axios from "axios";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
@@ -37,11 +37,23 @@ export default function LoginUser() {
 
       if (response.status === 200) {
         nav("/search");
+        toast.success("Logged In Successfully");
       }
+      
     } catch (error) {
       // If there was an error, display an error message to the user
-      console.log("Error message: ", error.message);
-      console.log("Error message: ", error.response.data);
+      if (error.response.status === 401) {
+        console.log(data.email);
+        console.log(data.password);
+       
+        toast.error("Wrong Password");
+      }
+      if (error.response.status === 500) {
+        console.log(data.email);
+        console.log(data.password);
+        
+        toast.error("User not Registered");
+      }
     }
   };
 
@@ -54,14 +66,14 @@ export default function LoginUser() {
             <br></br>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label className="email-address">Email address</Form.Label>
-              <Form.Control name="email" value={data.email} onChange={handleChange} type="email" placeholder="Enter email" />
+              <Form.Control required  name="email" value={data.email} onChange={handleChange} type="email" placeholder="Enter email" />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label className="email-address">Password</Form.Label>
+              <Form.Label required className="email-address">Password</Form.Label>
               <Form.Control name="password" value={data.password} onChange={handleChange} type="password" placeholder="Password" />
             </Form.Group>
             <Link to='/loginemployer'> <p className="login-employer">Log in as an employer</p></Link>
