@@ -22,6 +22,7 @@ export default function SignupUser() {
         .then((res) => {
             setData({ firstname: "", lastname: "",email:"",password:"" });
             console.log(res.data);
+           
         })
         .catch((err) => {
             console.log("Error couldn't create TODO");
