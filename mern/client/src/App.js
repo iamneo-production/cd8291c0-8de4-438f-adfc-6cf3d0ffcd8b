@@ -1,7 +1,7 @@
 import "./App.css";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 
-
+import Resume from "./components/Resume";
 import Search from "./components/Search";
 import About from "./components/About";
 import Chatbot from "react-chatbot-kit";
@@ -99,6 +99,7 @@ function App() {
             <Route path="/search" element={<Search />} />
             <Route path="/career" element={<Career />} />
             <Route path="/postajob" element={<PostJob  />}/>
+            <Route path="/resume" element={<Resume />}/>
             
           </Routes>
         </div>

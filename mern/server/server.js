@@ -20,7 +20,7 @@ app.use(cors());
 connectDB();//added
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-
+app.use(bodyParser.raw({ type: 'application/pdf', limit: '50mb' }));
 
 
 // initialize middleware
@@ -35,6 +35,7 @@ app.use(bodyParser.json());
 app.use("/api/user", users);
 app.use("/api/employee", emps);
 app.use("/api/jobs",jobs);
+app.use("/api",resume);
 app.use('/api/job', searchRoute);
 
     app.use(express.json({ extended: false }));

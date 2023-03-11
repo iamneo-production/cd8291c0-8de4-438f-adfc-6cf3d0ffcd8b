@@ -5,13 +5,16 @@ const app = express();
 const router = express.Router();
  
 const request = require('request');
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
  
-app.post('api/resume', (req, res) => {
-    const { name, email, location, position, resume } = req.body;
+router.post('/resume', (req, res) => {
+    const { resume } = req.params;
+    console.log(resume);
   
     // Extract skills from the resume using pdf-parse
-    const resumeBuffer = Buffer.from(resume, 'base64');
+    const resumeBuffer = Buffer.alloc(resume.length, resume, 'base64');
+    
     pdfParse(resumeBuffer).then(function (data) {
       const resumeText = data.text;
       const skillsRegex = /(?:^|\s)(?:#|)([A-Za-z0-9\-\.\_]+)(?:$|\s)/g;
@@ -27,7 +30,7 @@ app.post('api/resume', (req, res) => {
       const content_type = "application/json";
   
       // Call the Adzuna API to get job recommendations
-      const params = { app_id, app_key, results_per_page, max_days_old, "content-type": content_type, what: skills.join(','), where: location };
+      const params = { app_id, app_key, results_per_page, max_days_old, "content-type": content_type};
       request.get({ url, qs: params }, (error, response, body) => {
         if (error) {
           console.error(error);
@@ -50,4 +53,4 @@ app.post('api/resume', (req, res) => {
       });
     });
   });
-  module.exports = app;
+  module.exports = router;

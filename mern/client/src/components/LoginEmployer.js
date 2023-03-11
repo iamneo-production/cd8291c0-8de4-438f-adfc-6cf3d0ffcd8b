@@ -51,7 +51,7 @@ export default function LoginEmployer() {
         console.log(data.email);
         console.log(data.password);
      
-        toast.error("Employees not Registered");
+        toast.error("Employee not Registered");
       }
     }
   };
