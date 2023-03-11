@@ -44,12 +44,12 @@ export default function SignupUser() {
                 <Form.Label className="email-address">First Name</Form.Label>
                   <Form.Control onChange={handleChange}  type="text"
                         name="firstname"
-                        value={data.firstname} placeholder="First name" />
+                        value={data.firstname} required placeholder="First name" />
                 </Col>
                 <Col>
                 <Form.Label className="email-address">Last Name</Form.Label>
 
-                  <Form.Control onChange={handleChange}  type="text"
+                  <Form.Control onChange={handleChange} required type="text"
                         name="lastname"
                         value={data.lastname} placeholder="Last name" />
                   <br></br>
@@ -57,7 +57,7 @@ export default function SignupUser() {
                 
                 <Form.Group className="mb-3" controlId="formBasicEmail">
                   <Form.Label className="email-address">Email address</Form.Label>
-                  <Form.Control onChange={handleChange}  
+                  <Form.Control required onChange={handleChange}  
                         name="email"
                         value={data.email} type="email" placeholder="Enter email" />
                   <Form.Text className="text-muted">
@@ -68,7 +68,7 @@ export default function SignupUser() {
                 <Form.Group className="mb-3" controlId="formBasicPassword">
                   <Form.Label className="email-address">Password</Form.Label>
                   <Form.Control onChange={handleChange} 
-                        name="password"
+                        name="password" required
                         value={data.password} type="password" placeholder="Password" />
                 </Form.Group>
                 <Link to='/signupemployer'> <p className="login-employer" id="spacing">Sign up as an employer</p></Link>

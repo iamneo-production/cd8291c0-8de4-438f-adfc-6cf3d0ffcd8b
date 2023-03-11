@@ -36,7 +36,6 @@ export default function LoginUser() {
       );
 
       if (response.status === 200) {
-        
         nav("/search");
         toast.success("Logged In Successfully");
       }
@@ -67,14 +66,14 @@ export default function LoginUser() {
             <br></br>
             <Form.Group className="mb-3" controlId="formBasicEmail">
               <Form.Label className="email-address">Email address</Form.Label>
-              <Form.Control name="email" value={data.email} onChange={handleChange} type="email" placeholder="Enter email" />
+              <Form.Control required  name="email" value={data.email} onChange={handleChange} type="email" placeholder="Enter email" />
               <Form.Text className="text-muted">
                 We'll never share your email with anyone else.
               </Form.Text>
             </Form.Group>
 
             <Form.Group className="mb-3" controlId="formBasicPassword">
-              <Form.Label className="email-address">Password</Form.Label>
+              <Form.Label required className="email-address">Password</Form.Label>
               <Form.Control name="password" value={data.password} onChange={handleChange} type="password" placeholder="Password" />
             </Form.Group>
             <Link to='/loginemployer'> <p className="login-employer">Log in as an employer</p></Link>

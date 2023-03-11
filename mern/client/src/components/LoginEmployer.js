@@ -66,7 +66,7 @@ export default function LoginEmployer() {
               <br></br>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label className="email-address">Email address</Form.Label>
-                <Form.Control
+                <Form.Control required
                   onChange={handleChange}
                   name="email"
                   value={data.email}
@@ -80,7 +80,7 @@ export default function LoginEmployer() {
 
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label className="email-address">Password</Form.Label>
-                <Form.Control
+                <Form.Control required
                   onChange={handleChange}
                   name="password"
                   value={data.password}
