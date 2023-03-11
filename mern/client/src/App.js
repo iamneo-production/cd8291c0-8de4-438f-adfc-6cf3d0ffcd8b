@@ -8,6 +8,7 @@ import Profiles from "./components/Profiles";
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
+import UserDetails from './components/UserDetails'
 import github from "./github-logo.png";
 import fb from "./facebook.png";
 import twitter from "./twitter-sign.png";
@@ -90,8 +91,7 @@ function App() {
             <Route path="/profile" element={<Profiles />} />
             <Route path="/loginemployer" element={<LoginEmployer />} />
             <Route path="/signupemployer" element={<SignupEmployer />} />
-            
-
+            <Route path="/userdetials" element={<UserDetails />} />
             <Route path="/" element={<Home />} />
             <Route path="/search" element={<Search />} />
             <Route path="/career" element={<Career />} />
